@@ -49,20 +49,29 @@ Click "Connect Wallet" in the top bar. OPWallet will prompt you to approve the c
 
 The vault will appear on the "My Vaults" page after the transaction is mined (1-3 minutes).
 
-### Step 3: Deposit Tokens
+![Create a new vault — set the token, add owners, and configure the approval threshold](screenshots/create-vault.png)
 
-1. Go to **"My Vaults"** and expand your vault
-2. Click **"Deposit"**
-3. Enter the amount of tokens to deposit
-4. Confirm the transaction — this calls `increaseAllowance` then transfers tokens into the vault
+### Step 3: View Your Vaults
+
+After creation, go to **"My Vaults"** to see all vaults where you are an owner. Each vault shows its ID, token, balance, threshold, and whether there's an active proposal. Expand any vault to manage it.
+
+![My Vaults — overview of all vaults you own, with balance and status](screenshots/my-vaults.png)
+
+### Step 4: Deposit Tokens
+
+1. Expand your vault and click **"Deposit"**
+2. Enter the amount of tokens to deposit — use the slider or quick buttons (25%, 50%, 75%, MAX)
+3. Confirm the transaction — this calls `increaseAllowance` then transfers tokens into the vault
 
 The vault's balance updates after the transaction is mined.
 
-### Step 4: Create a Withdrawal Proposal
+![Deposit modal — select amount with slider, view your wallet balance, and confirm](screenshots/deposit.png)
 
-1. Expand your vault and scroll to **"Create Proposal"**
+### Step 5: Create a Withdrawal Proposal
+
+1. Click **"+ New Proposal"** on your vault
 2. Enter the **recipient address** — where the tokens should be sent
-3. Enter the **amount** to withdraw
+3. Enter the **amount** to withdraw — use the slider or quick buttons
 4. Click **"Create Proposal"** and confirm
 
 **Important rules about proposals:**
@@ -72,16 +81,20 @@ The vault's balance updates after the transaction is mined.
 - Only vault owners can create proposals
 - The proposed amount must not exceed the vault's balance
 
-### Step 5: Approve the Proposal
+![New Proposal modal — enter recipient, choose amount, and submit for approval](screenshots/create-proposal.png)
+
+### Step 6: Approve the Proposal
 
 Other owners need to approve the proposal:
 
 1. They go to **"My Vaults"** and expand the vault
-2. The active proposal shows the recipient, amount, and current approval count
+2. The active proposal shows the recipient, amount, current approval count, and a progress bar
 3. Click **"Approve Proposal"** and confirm in OPWallet
 4. Each owner can only approve once per proposal
 
-### Step 6: Execute the Withdrawal
+![Active proposal — shows amount, approval progress (1/2), recipient address, and approve button](screenshots/approve-proposal.png)
+
+### Step 7: Execute the Withdrawal
 
 Once the approval count reaches the threshold:
 
