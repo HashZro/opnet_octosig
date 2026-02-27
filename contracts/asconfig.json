@@ -1,0 +1,45 @@
+{
+  "targets": {
+    "alpha": {
+      "outFile": "build/AlphaToken.wasm",
+      "textFile": "build/AlphaToken.wat",
+      "use": ["abort=src/alpha/index/abort"]
+    },
+    "beta": {
+      "outFile": "build/BetaToken.wasm",
+      "textFile": "build/BetaToken.wat",
+      "use": ["abort=src/beta/index/abort"]
+    },
+    "oct": {
+      "outFile": "build/OctToken.wasm",
+      "textFile": "build/OctToken.wat",
+      "use": ["abort=src/oct/index/abort"]
+    },
+    "vault": {
+      "outFile": "build/MultSigVault.wasm",
+      "textFile": "build/MultSigVault.wat",
+      "use": ["abort=src/vault/index/abort"]
+    }
+  },
+  "options": {
+    "sourceMap": false,
+    "optimizeLevel": 3,
+    "shrinkLevel": 1,
+    "converge": true,
+    "noAssert": false,
+    "enable": [
+      "sign-extension",
+      "mutable-globals",
+      "nontrapping-f2i",
+      "bulk-memory",
+      "simd",
+      "reference-types",
+      "multi-value"
+    ],
+    "runtime": "stub",
+    "memoryBase": 0,
+    "initialMemory": 1,
+    "exportStart": "start",
+    "transform": "@btc-vision/opnet-transform"
+  }
+}

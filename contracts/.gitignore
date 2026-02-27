@@ -1,0 +1,23 @@
+# Environment & secrets — NEVER commit
+.env
+.env.*
+*.env
+.secret
+*.key
+*.pem
+
+# Build artifacts
+node_modules/
+build/
+abis/
+*.wat
+*.wasm
+
+# Local Claude settings (permissions, etc.)
+.claude/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

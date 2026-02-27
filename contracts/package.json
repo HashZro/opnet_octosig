@@ -1,0 +1,28 @@
+{
+  "name": "multsig-vault",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:alpha": "asc src/alpha/index.ts --target alpha --measure --uncheckedBehavior never",
+    "build:beta": "asc src/beta/index.ts --target beta --measure --uncheckedBehavior never",
+    "build:oct": "asc src/oct/index.ts --target oct --measure --uncheckedBehavior never",
+    "build:vault": "asc src/vault/index.ts --target vault --measure --uncheckedBehavior never",
+    "build": "npm run build:alpha && npm run build:beta && npm run build:oct && npm run build:vault",
+    "deploy:alpha": "node --experimental-strip-types scripts/deploy-alpha.ts",
+    "deploy:beta": "node --experimental-strip-types scripts/deploy-beta.ts",
+    "deploy:oct": "node --experimental-strip-types scripts/deploy-oct.ts",
+    "deploy:vault": "node --experimental-strip-types scripts/deploy-vault.ts"
+  },
+  "dependencies": {
+    "@btc-vision/bitcoin": "7.0.0-alpha.11",
+    "@btc-vision/btc-runtime": "^1.11.0-rc.10",
+    "@btc-vision/transaction": "1.8.0-beta.10",
+    "opnet": "1.8.1-beta.13"
+  },
+  "devDependencies": {
+    "@btc-vision/opnet-transform": "1.2.0",
+    "assemblyscript": "0.27.36",
+    "dotenv": "^16.0.0"
+  }
+}
